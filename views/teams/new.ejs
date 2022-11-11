@@ -3,16 +3,19 @@
 
 <form id="new-form" action="/teams" method="POST">
     <label>Team</label>
-    <input type="text" name="title">
+    <input type="text" name="Team">
     <label>State</label>
-    <input type="text" name="releaseYear">
+    <input type="text" name="State">
     <label>Wins</label>
+    <input type="text" name="Wins">
+    <label>Losses</label>
+    <input type="text" name="Losses">
     <label>Conference</label>
     <select name="Conference">
       <option value="AFC">AFC</option>
       <option value="NFC">NFC</option>
     </select>
-    <label>Losses</label>
+    <input type="submit" value="Add Team">
   </form>
   
   <%- include('../partials/footer') %>
