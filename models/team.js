@@ -6,7 +6,8 @@ const teamSchema = new Schema({
     team: String,
     wins: Number,
     losses: Number,
-    conference: String,
+    games: [{type:Schema.Types.ObjectId,ref:'Game'}],
+    user: {type:Schema.Types.ObjectId,ref:'User'}, 
 })
 
 module.exports = mongoose.model('Team', teamSchema)

@@ -1,19 +1,15 @@
 
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/teams" method="POST">
+<form id="new-form" action="/teams/new" method="POST">
     <label>Team</label>
-    <input type="text" name="Team">
+    <input type="text" name="team">
     <label>State</label>
-    <input type="text" name="State">
+    <input type="text" name="state">
     <label>Wins</label>
-    <input type="text" name="Wins">
+    <input type="Number" name="wins">
     <label>Losses</label>
-    <input type="text" name="Losses">
-    <label>Conference</label>
-    <select name="Conference">
-      <option value="AFC">AFC</option>
-      <option value="NFC">NFC</option>
+    <input type="Number" name="losses">
     </select>
     <input type="submit" value="Add Team">
   </form>

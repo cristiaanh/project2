@@ -10,6 +10,7 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
+    teams: [{type:Schema.Types.ObjectId,ref:'Team'}],
   },
   { timeStamps: true }
 );

@@ -1,9 +1,12 @@
+const team = require('../models/team');
 const Team = require('../models/team');
 
 module.exports = {
     index,
     new: newTeam,
-    show
+    show,
+    create,
+    deleteTeam
 };
 
 function index(req, res) {
@@ -18,4 +21,21 @@ function newTeam(req, res) {
 
 function show(req, res) {
     Team.findById(req.params.id);
+}
+
+function create(req, res) {
+    const team = new Team(req.body);
+    team.save(function(err) {
+        if (err) return res.redirect('/teams/new');
+        res.redirect('/teams')
+    })
+}
+
+async function deleteTeam(req, res) {
+    try {
+      const foundTeam = await team.findById(req.params.id)  
+    } catch (error) {
+        console.log(error) 
+        
+    }
 }
