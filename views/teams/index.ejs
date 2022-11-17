@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
-<table id="list">
+<table id="list" class="table">
   <thead>
     <tr>
-      <th>TEAMS</th>
-      <th></th>
+      <th scope="col">TEAMS</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% teams.forEach(function(m) { %>
       <tr>
+        <th scope="row">1</th>
         <td><%= m.state %></td>
         <td><%= m.team %></td>
         <td><%= m.wins %></td>
