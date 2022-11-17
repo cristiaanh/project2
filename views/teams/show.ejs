@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<form id="edit-form" action="/teams/<%=team._id%>/?_method=PUT" method="POST">
+    <label>Team</label>
+    <input type="text" name="team"value='<%=team.team%>'>
+    <label>State</label>
+    <input type="text" name="state"value='<%=team.state%>'>
+    <label>Wins</label>
+    <input type="Number" name="wins"value='<%=team.wins%>'>
+    <label>Losses</label>
+    <input type="Number" name="losses"value='<%=team.losses%>'>
+    </select>
+    <input type="submit" value="Edit Team">
+  </form>
+  
+  <%- include('../partials/footer') %>

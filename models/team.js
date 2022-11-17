@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const teamSchema = new Schema({
-    state: String,
-    team: String,
-    wins: Number,
-    losses: Number,
+    state: { type: String},
+    team: { type: String},
+    wins: { type: Number},
+    losses: { type: Number},
     games: [{type:Schema.Types.ObjectId,ref:'Game'}],
     user: {type:Schema.Types.ObjectId,ref:'User'}, 
 })
