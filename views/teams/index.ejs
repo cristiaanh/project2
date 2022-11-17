@@ -14,6 +14,9 @@
         <td><%= m.wins %></td>
         <td><%= m.losses %></td>
         <td><a href="/teams/<%= m._id %>">DETAILS</a></td>
+        <td>
+          <form action="/teams/<%=m._id%>?_method=DELETE" method="POST">
+          <button>delete</button></form></td>
       </tr>
       <% }); %>
     </tbody>

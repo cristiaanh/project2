@@ -34,19 +34,25 @@ function create(req, res) {
     })
 }
 
-async function deleteTeam(req, res) {
-    try {
-        const foundTeam = await Team.findById(req.params.id).populate({ path: 'user' })
-        const user = await User.findById(foundTeam.user._id)
-        const teamIndex = user.teams.indexOf(foundTeam._id)
-        user.teams.splice(teamIndex, 1)
-        await Team.findByIdAndDelete(req.params.id)
-        await user.save()
-    } catch (error) {
-        console.log(error)
+// async function deleteTeam(req, res) {
+//     try {
+//         const foundTeam = await Team.findById(req.params.id).populate({ path: 'user' })
+//         const user = await User.findById(foundTeam.user._id)
+//         const teamIndex = user.teams.indexOf(foundTeam._id)
+//         user.teams.splice(teamIndex, 1)
+//         await Team.findByIdAndDelete(req.params.id)
+//         await user.save()
+//     } catch (error) {
+//         console.log(error)
 
-    }
-}
+//     }
+// }
+
+function deleteTeam(req, res) {
+    Team.findByIdAndDelete(req.params.id, function (err, team) {
+      res.redirect("/teams");
+    });
+  }
 
 function update(req, res) {
     Team.findOneAndUpdate(
